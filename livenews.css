@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #fdf2f8
+        );
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+
+    background:
+        linear-gradient(
+            90deg,
+            #111827,
+            #312e81,
+            #7c3aed
+        );
+
+    color: white;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo {
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.logo span {
+
+    color: #facc15;
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 20px;
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+
+    color: #facc15;
+}
+
+
+.time {
+
+    background: rgba(255,255,255,0.15);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+}
+
+
+/* BREAKING */
+
+.breaking {
+
+    background: #dc2626;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.breaking strong {
+
+    background: #991b1b;
+
+    padding: 13px 20px;
+
+    white-space: nowrap;
+}
+
+.ticker {
+
+    overflow: hidden;
+
+    flex: 1;
+}
+
+.ticker span {
+
+    display: inline-block;
+
+    padding-left: 100%;
+
+    white-space: nowrap;
+
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* SEARCH */
+
+.search-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 25px;
+}
+
+.search-section input {
+
+    width: 400px;
+
+    max-width: 70%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    outline: none;
+
+    box-shadow: 0 5px 20px #ddd;
+}
+
+.search-section button {
+
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 25px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.search-section button:hover {
+
+    background: #312e81;
+}
+
+.voice-btn {
+
+    font-size: 18px;
+}
+
+
+/* VOICE STATUS */
+
+#voiceStatus {
+
+    text-align: center;
+
+    color: #555;
+
+    margin-bottom: 15px;
+}
+
+
+/* HERO */
+
+.hero {
+
+    width: 70%;
+
+    height: 480px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+
+.slide {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+}
+
+.slide.active {
+
+    display: block;
+
+    animation: fade 1s;
+}
+
+@keyframes fade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.slide::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.85)
+        );
+}
+
+
+.slide-content {
+
+    position: absolute;
+
+    bottom: 50px;
+
+    left: 50px;
+
+    color: white;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.slide-content span {
+
+    background: #ef4444;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+.slide-content h1 {
+
+    font-size: 42px;
+
+    margin: 15px 0;
+}
+
+.slide-content p {
+
+    font-size: 18px;
+}
+
+
+/* SLIDER BUTTONS */
+
+.prev,
+.next {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: rgba(0,0,0,0.5);
+
+    color: white;
+
+    font-size: 28px;
+
+    padding: 12px 17px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.prev {
+
+    left: 20px;
+}
+
+.next {
+
+    right: 20px;
+}
+
+
+/* DOTS */
+
+.dots {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.dots span {
+
+    display: inline-block;
+
+    width: 12px;
+
+    height: 12px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    margin: 5px;
+
+    cursor: pointer;
+
+    opacity: 0.6;
+}
+
+.dots span.active-dot {
+
+    background: #facc15;
+
+    opacity: 1;
+}
+
+
+/* NEWS */
+
+.news-section {
+
+    padding: 50px 6%;
+}
+
+.news-section h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+
+.news-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.news-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.news-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.2);
+}
+
+.news-card img {
+
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.news-content {
+
+    padding: 20px;
+}
+
+.news-content span {
+
+    color: #4f46e5;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.news-content h3 {
+
+    margin: 10px 0;
+
+    font-size: 20px;
+}
+
+.news-content p {
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 40px;
+
+    margin-top: 40px;
+}
+
+footer h2 {
+
+    color: #facc15;
+
+    margin-bottom: 10px;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    header {
+
+        flex-direction: column;
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+
+        height: 400px;
+
+        width: 95%;
+    }
+
+    .slide-content {
+
+        left: 25px;
+
+        bottom: 45px;
+
+        right: 20px;
+    }
+
+    .slide-content h1 {
+
+        font-size: 28px;
+    }
+
+    .news-grid {
+
+        grid-template-columns: 1fr;
+    }
+}

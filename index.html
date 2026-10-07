@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live News</title>
+
+    <link rel="stylesheet" href="livenews.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        📰 Live<span>News</span>
+    </div>
+
+    <nav>
+        <a href="#" onclick="showCategory('all')">Home</a>
+        <a href="#" onclick="showCategory('national')">National</a>
+        <a href="#" onclick="showCategory('sports')">Sports</a>
+        <a href="#" onclick="showCategory('technology')">Technology</a>
+        <a href="#" onclick="showCategory('entertainment')">
+            Entertainment
+        </a>
+    </nav>
+
+    <div class="time" id="time">
+        00:00:00
+    </div>
+
+</header>
+
+
+<!-- BREAKING NEWS -->
+
+<div class="breaking">
+
+    <strong>🔴 BREAKING NEWS</strong>
+
+    <div class="ticker">
+
+        <span id="breakingText">
+            Latest breaking news updates from around the world...
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Search news..."
+    >
+
+    <button onclick="searchNews()">
+        Search
+    </button>
+
+    <button
+        class="voice-btn"
+        onclick="startVoice()"
+        title="Voice Search"
+    >
+        🎙️
+    </button>
+
+</section>
+
+
+<!-- VOICE STATUS -->
+
+<p id="voiceStatus">
+    Click 🎙️ and speak a command
+</p>
+
+
+<!-- HERO SLIDER -->
+
+<section class="hero">
+
+    <div class="slides">
+
+        <div class="slide active">
+
+            <img
+                src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
+            >
+
+            <div class="slide-content">
+
+                <span>BREAKING</span>
+
+                <h1>
+                    Latest News Updates Around the World
+                </h1>
+
+                <p>
+                    Stay updated with the latest national
+                    and international news.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="sudhachandran images.jpg"
+            >
+
+            <div class="slide-content">
+
+                <span>SPORTS</span>
+
+                <h1>
+                    Latest Sports News
+                </h1>
+
+                <p>
+                    Get the latest sports updates and headlines.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+            >
+
+            <div class="slide-content">
+
+                <span>TECHNOLOGY</span>
+
+                <h1>
+                    New Technology Updates
+                </h1>
+
+                <p>
+                    Discover the latest technology trends.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80"
+            >
+
+            <div class="slide-content">
+
+                <span>ENTERTAINMENT</span>
+
+                <h1>
+                    Entertainment Headlines
+                </h1>
+
+                <p>
+                    Movies, celebrities and entertainment news.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="prev" onclick="previousSlide()">
+        ❮
+    </button>
+
+    <button class="next" onclick="nextSlide()">
+        ❯
+    </button>
+
+
+    <div class="dots">
+
+        <span onclick="goToSlide(0)"></span>
+        <span onclick="goToSlide(1)"></span>
+        <span onclick="goToSlide(2)"></span>
+        <span onclick="goToSlide(3)"></span>
+
+    </div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section class="news-section">
+
+    <h2>
+        Latest News
+    </h2>
+
+    <div id="newsContainer" class="news-grid">
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>📰 LiveNews</h2>
+
+    <p>
+        Your daily source for latest news updates.
+    </p>
+
+    <p>
+        © 2026 LiveNews. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="livenews.js"></script>
+
+</body>
+</html>
